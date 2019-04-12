@@ -1,20 +1,11 @@
 ---
 title: "result"
 author: "junfeng"
-date: ""
+date: ''
 output:
   github_document: 
     html_preview: true
     df_print: kable
-  pdf_document: 
-    includes:
-      in_header: header.tex
-    template: eisvogel.latex
-    latex_engine: xelatex
-    df_print: kable
-titlepage: yes
-editor_options: 
-  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -113,7 +104,7 @@ profit_set_4 <- function(income,leads_cnt,leads_conversion,constant_cost,leads_c
 temp_4 <- replicate(1000,profit_set_4(income_4,leads_cnt_4,-0.181044846739997+0.0245604788599997*leads_cost_4,constant_cost_4,leads_cost_4,1))
 quantile(temp_4,c(0.005,0.995))
 
-# 4.2
+# 4.1
 profit_10_4 <- function(income,leads_cnt,leads_conversion,constant_cost,leads_cost,m) {
   income_1 = sample(income, size = m, replace = TRUE)
   leads_cnt_1 = sample(leads_cnt, size = m, replace = TRUE)
